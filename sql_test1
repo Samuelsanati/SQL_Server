@@ -1,10 +1,15 @@
-create database books
 use books 
+go
 create table Titles (
 idTitles int,
-introduction text,
+introduction nvarchar(500),
 topic nvarchar (50)
 );
+go
+insert into Titles (idTitles,introduction,topic)
+            values (1,N'پیش رفت روز افزون علم وفن آوری',N'گامی در شناخت مواد مخدر و روان گردان')
+                  ,(2,N'این کتاب حاوی مطالبی درباره هاله انسان و پردازش نوع شخصیت',N'هاله ات چه رنگی است')
+go
 create table Authors (
 idAuthors int,
 fNameAuthors nvarchar (50),
@@ -13,36 +18,46 @@ genderAuthors nvarchar (5),
 ageAuthors int,
 EmailAuthors char (50)
 );
+go
+insert into Authors (idAuthors,fNameAuthors,lNameAuthors,genderAuthors,ageAuthors,EmailAuthors)
+            values (1,N'میلاد',N'حاتمی',N'مذکر','46','miladhatami@gmail.com'),
+			       (2,N'باورز',N'باربارا',N'مونث','51','baverzbarbara@gmail.com')
+go
 create table Publisher (
 idPublisher int,
 NamePublisher nvarchar (50),
 EmailPublisher char (50)
 );
-insert into Titles (idTitles,introduction,topic)
-            values (1,'پیش رفت روز افزون علم وفن آوری...','گامی در شناخت مواد مخدر و روان گردان'),
-                   (2,'این کتاب حاوی مطالبی درباره هاله انسان و پردازش نوع شخصیت ...','هاله ات چه رنگی است')
-insert into Authors (idAuthors,fNameAuthors,lNameAuthors,genderAuthors,ageAuthors,EmailAuthors)
-            values (1,'میلاد','حاتمی','مذکر','46','miladhatami@gmail.com'),
-			       (2,'باورز','باربارا','مونث','51','baverzbarbara@gmail.com')
+go
 insert into Publisher (idPublisher,NamePublisher,EmailPublisher)
-            values ('1','انتشارات معراج','merajpublisher@gmail.com'),
-			       ('2','انتشارات درسا','dorsa_publisher@gmail.com')
-
+            values (1,N'انتشارات معراج','merajpublisher@gmail.com'),
+			       (2,N'انتشارات درسا','dorsa_publisher@gmail.com')
+go
 select * from Titles
 select * from Authors
 select * from Publisher
-
+go
 update Titles
-set introduction = 'مواد روان گردان از دیر باز توسط مردم استفاده میشده است'
+set introduction = N'مواد روان گردان از دیر باز توسط مردم استفاده میشده است'
 where idTitles = '1'
 select * from Titles
-
+go
 update Authors
-set fNameAuthors = 'رضا',lNameAuthors = 'میرعماد'
+set fNameAuthors = N'رضا',lNameAuthors = N'میرعماد'
 where idAuthors = '1'
 select * from Authors
-
+go
 update Publisher
-set NamePublisher = 'انتشارات دنیای خوب'
+set NamePublisher = N'انتشارات دنیای خوب'
 where idPublisher = '2'
 select * from Publisher
+go
+create procedure SP_ShowBooks
+as
+select * from books
+go
+create procedure SP_getListAge
+as
+select * from books
+where age > 26
+go
