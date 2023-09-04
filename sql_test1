@@ -1,3 +1,4 @@
+create database books
 use books 
 go
 create table Titles (
@@ -61,3 +62,10 @@ as
 select * from books
 where age > 26
 go
+--create procedure SP_getAllPublisher 
+--as
+--select * from Publisher
+--create procedure getAllMyAuthors
+--as
+--select * from Authors
+--exec getAllMyAuthors
