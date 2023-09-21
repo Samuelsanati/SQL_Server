@@ -53,16 +53,16 @@ set NamePublisher = N'انتشارات دنیای خوب'
 where idPublisher = '2'
 select * from Publisher
 go
-create procedure SP_ShowBooks
+create procedure ShowBooks
 as
 select * from books
 go
-create procedure SP_getListAge
+create procedure getListAge
 as
 select * from books
 where age > 26
 go
---create procedure SP_getAllPublisher 
+--create procedure getAllPublisher 
 --as
 --select * from Publisher
 --create procedure getAllMyAuthors
