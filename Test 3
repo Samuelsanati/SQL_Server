@@ -1,0 +1,90 @@
+CREATE DATABASE Stare 
+GO
+
+--saller = فروشنده
+--Seller Details = جزئیات فروشنده
+
+CREATE TABLE Seller (
+Id_Seller INT  IDENTITY NOT NULL PRIMARY KEY,
+SellerDetails VARCHAR (50) NOT NULL
+)
+INSERT INTO Seller (SellerDetails)
+VALUES ('Ali Sanati'),
+       ('Mohammad Mortazavi'),
+	   ('Kamran Alaei'),
+	   ('Sara Kiani'),
+	   ('Shiva Moghadam')
+GO
+
+--Buyer Details = مشخصات خریدار
+--Address = آدرس
+--Phone Number = شماره همراه
+--City = شهر
+
+CREATE TABLE Buyer (
+ID_Buyer INT IDENTITY NOT NULL PRIMARY KEY,
+BuyerDetails VARCHAR (50) NOT NULL,
+Address VARCHAR (200) NOT NULL,
+ZipCode INT NOT NULL,
+PhoneNumber INT NOT NULL,
+City VARCHAR (50) NOT NULL
+)
+GO
+INSERT INTO Buyer (BuyerDetails,Address,ZipCode,PhoneNumber,PhoneNumber,City)
+VALUES ('Hamid Rahmani','Tehra,Yaft Abad,St Navab,no1',3351739456,09195412365,'Tehran'),
+       ('Milad Mohammadluo','Tehran,Shahryar,Andiseh 3',3351624569,09126548795,'Sahhryar'),
+	   ('Reza Hamidian','Karaj,Jahan Sahr,Milad3,no18',321458796,09184568752,'Karaj'),
+	   ('Elnaz Allahvirni','Tehran,Bag Feyz,Sardar Jangal,no125',3251468597,09125461253,'Teharn')
+GO
+
+--Products = محصولات
+--Type of Products = نوع محصولات
+--In Stak Count =  تعداد موجودی
+
+CREATE TABLE Products (
+ID_PUS INT IDENTITY NOT NULL PRIMARY KEY,
+TypeOfProducts VARCHAR (60) NOT NULL,
+InStakCount INT NOT NULL
+)
+GO
+INSERT INTO Products (TypeOfProducts,InStakCount)
+VALUES ('Electronic',2156),
+       ('Tools',654825),
+	   ('Wash',56945)
+GO
+
+--Product Name = نام محصول
+--Type Of Product = نوع محصول
+--Price =قیمت
+
+CREATE TABLE Product (
+ID_Product INT IDENTITY NOT NULL PRIMARY KEY,
+ProductName varchar (100) NOT NULL,
+TypeOfProduct Varchar (150) NOT NULL,
+Price FLOAT NOT NULL
+)
+GO
+
+--Washing Machine = ماشین لباسشویی
+--Dish Washer = ماشین ظرفشویی
+--TV = تلویزیون
+--Electronic = الکترونیکی
+--Beans = حبوبات
+--Cost Of Sales = هزینه فروش
+
+INSERT INTO Product (ProductName,TypeOfProduct,Price)
+VALUES ('TV LG','Electronic',25/450/000),
+       ('Washing Machine','Electronic',35/600/500),
+	   ('Dish Washer','Electronic',25/756/000),
+	   ('Beans','Food',18/500)
+GO
+
+CREATE TABLE Orders (
+ID_Orders INT IDENTITY NOT NULL PRIMARY KEY,
+Id_Seller INT NOT NULL,
+ID_Buyer INT NOT NULL,
+ID_PUS INT NOT NULL,
+ID_Product INT NOT NULL,
+NumberOfProducts INT NOT NULL,
+CostOfSales FLOAT NOT NULL
+)
