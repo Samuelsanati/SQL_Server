@@ -30,7 +30,7 @@ PhoneNumber INT NOT NULL,
 City VARCHAR (50) NOT NULL
 )
 GO
-INSERT INTO Buyer (BuyerDetails,Address,ZipCode,PhoneNumber,PhoneNumber,City)
+INSERT INTO Buyer (BuyerDetails,Address,ZipCode,PhoneNumber,City)
 VALUES ('Hamid Rahmani','Tehra,Yaft Abad,St Navab,no1',3351739456,09195412365,'Tehran'),
        ('Milad Mohammadluo','Tehran,Shahryar,Andiseh 3',3351624569,09126548795,'Sahhryar'),
 	   ('Reza Hamidian','Karaj,Jahan Sahr,Milad3,no18',321458796,09184568752,'Karaj'),
