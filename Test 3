@@ -31,10 +31,10 @@ City VARCHAR (50) NOT NULL
 )
 GO
 INSERT INTO Buyer (BuyerDetails,Address,ZipCode,PhoneNumber,City)
-VALUES ('Hamid Rahmani','Tehra,Yaft Abad,St Navab,no1',3351739456,0919541235,'Tehran'),
-       ('Milad Mohammadluo','Tehran,Shahryar,Andiseh 3',3351624569,0912654795,'Sahhryar'),
-	   ('Reza Hamidian','Karaj,Jahan Sahr,Milad3,no18',321458796,0918568752,'Karaj'),
-	   ('Elnaz Allahvirni','Tehran,Bag Feyz,Sardar Jangal,no125',3251468597,0912461253,'Teharn')
+VALUES ('Hamid Rahmani','Tehra,Yaft Abad,St Navab,no1',335173456,0919541236,'Tehran'),
+       ('Milad Mohammadluo','Tehran,Shahryar,Andiseh 3',335162569,0912654875,'Sahhryar'),
+	   ('Reza Hamidian','Karaj,Jahan Sahr,Milad3,no18',32145876,0918456872,'Karaj'),
+	   ('Elnaz Allahvirni','Tehran,Bag Feyz,Sardar Jangal,no125',325146857,0912546253,'Teharn')
 GO
 
 --Products = محصولات
@@ -44,7 +44,8 @@ GO
 CREATE TABLE Products (
 ID_PUS INT PRIMARY KEY IDENTITY,
 TypeOfProducts VARCHAR (60) NOT NULL,
-InStakCount INT NOT NULL
+InStakCount INT NOT NULL,
+FOREIGN KEY (ID_PUS) REFERENCES Seller (Id_Seller)
 )
 GO
 INSERT INTO Products (TypeOfProducts,InStakCount)
@@ -73,10 +74,10 @@ GO
 --Cost Of Sales = هزینه فروش
 
 INSERT INTO Product (ProductName,TypeOfProduct,Price)
-VALUES ('TV LG','Electronic',25/450/000),
-       ('Washing Machine','Electronic',35/600/500),
-	   ('Dish Washer','Electronic',25/756/000),
-	   ('Beans','Food',18/500)
+VALUES ('TV LG','Electronic',25/450/001),
+       ('Washing Machine','Electronic',35/600/502),
+	   ('Dish Washer','Electronic',25/756/035),
+	   ('Beans','Food',18/505)
 GO
 
 CREATE TABLE Orders (
@@ -86,5 +87,15 @@ ID_Buyer INT NOT NULL,
 ID_PUS INT NOT NULL,
 ID_Product INT NOT NULL,
 NumberOfProducts INT NOT NULL,
-CostOfSales FLOAT NOT NULL
+CostOfSales FLOAT NOT NULL,
+FOREIGN KEY (Id_Seller) REFERENCES Seller (Id_Seller),
+FOREIGN KEY (ID_Buyer) REFERENCES Buyer (ID_Buyer),
+FOREIGN KEY (ID_PUS) REFERENCES Products (ID_PUS),
+FOREIGN KEY (ID_Product) REFERENCES Product (ID_Product)
 )
+
+--Number Of Products = تعداد محصولات
+--Cost Of Sales = هزینه فروش
+
+INSERT INTO Orders (Id_Seller,ID_Buyer,ID_PUS,ID_Product,NumberOfProducts,CostOfSales)
+VALUES (1,1,1,1,7548,25/875/235)
