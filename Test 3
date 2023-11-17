@@ -5,7 +5,7 @@ GO
 --Seller Details = جزئیات فروشنده
 
 CREATE TABLE Seller (
-Id_Seller INT  IDENTITY NOT NULL PRIMARY KEY,
+Id_Seller INT PRIMARY KEY IDENTITY,
 SellerDetails VARCHAR (50) NOT NULL
 )
 INSERT INTO Seller (SellerDetails)
@@ -22,7 +22,7 @@ GO
 --City = شهر
 
 CREATE TABLE Buyer (
-ID_Buyer INT IDENTITY NOT NULL PRIMARY KEY,
+ID_Buyer INT PRIMARY KEY IDENTITY,
 BuyerDetails VARCHAR (50) NOT NULL,
 Address VARCHAR (200) NOT NULL,
 ZipCode INT NOT NULL,
@@ -42,7 +42,7 @@ GO
 --In Stak Count =  تعداد موجودی
 
 CREATE TABLE Products (
-ID_PUS INT IDENTITY NOT NULL PRIMARY KEY,
+ID_PUS INT PRIMARY KEY IDENTITY,
 TypeOfProducts VARCHAR (60) NOT NULL,
 InStakCount INT NOT NULL
 )
@@ -58,7 +58,7 @@ GO
 --Price =قیمت
 
 CREATE TABLE Product (
-ID_Product INT IDENTITY NOT NULL PRIMARY KEY,
+ID_Product INT PRIMARY KEY IDENTITY,
 ProductName varchar (100) NOT NULL,
 TypeOfProduct Varchar (150) NOT NULL,
 Price FLOAT NOT NULL
@@ -80,7 +80,7 @@ VALUES ('TV LG','Electronic',25/450/000),
 GO
 
 CREATE TABLE Orders (
-ID_Orders INT IDENTITY NOT NULL PRIMARY KEY,
+ID_Orders INT PRIMARY KEY IDENTITY,
 Id_Seller INT NOT NULL,
 ID_Buyer INT NOT NULL,
 ID_PUS INT NOT NULL,
