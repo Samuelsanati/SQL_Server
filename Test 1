@@ -24,9 +24,9 @@ INSERT INTO Authors (idAuthors,fNameAuthors,lNameAuthors,genderAuthors,ageAuthor
             values (1,N'میلاد',N'حاتمی',N'مذکر','46','miladhatami@gmail.com'),
 			       (2,N'باورز',N'باربارا',N'مونث','51','baverzbarbara@gmail.com')
 go
-create table Publisher (
-idPublisher int,
-NamePublisher nvarchar (50),
+CREATE TABLE Publisher (
+idPublisher INT,
+NamePublisher VARCHAR (50),
 EmailPublisher char (50)
 );
 go
