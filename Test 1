@@ -40,32 +40,32 @@ select * from Publisher
 GO
 UPDATE Titles
 Set Introduction = N'مواد روان گردان از دیر باز توسط مردم استفاده میشده است'
-where idTitles = '1'
+WHERE idTitles = '1'
 select * from Titles
 GO
 update Authors
-set fNameAuthors = N'رضا',lNameAuthors = N'میرعماد'
-where idAuthors = '1'
+SET fNameAuthors = N'رضا',lNameAuthors = N'میرعماد'
+WHERE idAuthors = '1'
 select * from Authors
 Go
-update Publisher
-set NamePublisher = N'انتشارات دنیای خوب'
-where idPublisher = '2'
+UPDATE Publisher
+SET NamePublisher = N'انتشارات دنیای خوب'
+WHERE idPublisher = '2'
 select * from Publisher
-go
-create procedure ShowBooks
-as
+GO
+CREATE Procedure ShowBooks
+AS
 select * from books
-go
-create procedure getListAge
-as
+GO
+CREATE Procedure getListAge
+AS
 select * from books
-where age > 26
-go
---create procedure getAllPublisher 
---as
+WHERE age > 26
+GO
+--CREATE Procedure getAllPublisher 
+--AS
 --select * from Publisher
 --create procedure getAllMyAuthors
---as
+--AS
 --select * from Authors
---exec getAllMyAuthors
+--Exec getAllMyAuthors
