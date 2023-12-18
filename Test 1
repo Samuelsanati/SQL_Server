@@ -33,21 +33,21 @@ go
 insert into Publisher (idPublisher,NamePublisher,EmailPublisher)
             values (1,N'انتشارات معراج','merajpublisher@gmail.com'),
 			       (2,N'انتشارات درسا','dorsa_publisher@gmail.com')
-go
+GO
 select * from Titles
 select * from Authors
 select * from Publisher
-go
-update Titles
-set introduction = N'مواد روان گردان از دیر باز توسط مردم استفاده میشده است'
+GO
+UPDATE Titles
+Set Introduction = N'مواد روان گردان از دیر باز توسط مردم استفاده میشده است'
 where idTitles = '1'
 select * from Titles
-go
+GO
 update Authors
 set fNameAuthors = N'رضا',lNameAuthors = N'میرعماد'
 where idAuthors = '1'
 select * from Authors
-go
+Go
 update Publisher
 set NamePublisher = N'انتشارات دنیای خوب'
 where idPublisher = '2'
