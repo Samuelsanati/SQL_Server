@@ -1,23 +1,23 @@
-create database books
-use books 
-go
-create table Titles (
-idTitles int,
-introduction nvarchar(500),
-topic nvarchar (50)
+CREATE DATABASE Books
+USE Books 
+GO
+CREATE TABLE Titles (
+idTitles INT,
+Introduction VARCHAR (500),
+Topic VARCHAR (50)
 );
-go
-insert into Titles (idTitles,introduction,topic)
-            values (1,N'پیش رفت روز افزون علم وفن آوری',N'گامی در شناخت مواد مخدر و روان گردان')
+GO
+INSERT INTO Titles (idTitles,Introduction,Topic)
+            VALUES (1,N'پیش رفت روز افزون علم وفن آوری',N'گامی در شناخت مواد مخدر و روان گردان')
                   ,(2,N'این کتاب حاوی مطالبی درباره هاله انسان و پردازش نوع شخصیت',N'هاله ات چه رنگی است')
-go
-create table Authors (
-idAuthors int,
-fNameAuthors nvarchar (50),
-lNameAuthors nvarchar (50),
-genderAuthors nvarchar (5),
-ageAuthors int,
-EmailAuthors char (50)
+GO
+CREATE TABLE Authors (
+idAuthors INT,
+fNameAuthors VARCHAR (50),
+lNameAuthors VARCHAR (50),
+GenderAuthors VARCHAR (5),
+AgeAuthors INY,
+EmailAuthors CHAR (50)
 );
 go
 insert into Authors (idAuthors,fNameAuthors,lNameAuthors,genderAuthors,ageAuthors,EmailAuthors)
