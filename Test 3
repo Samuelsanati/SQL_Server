@@ -31,10 +31,10 @@ City VARCHAR (50) NOT NULL
 )
 GO
 INSERT INTO Buyer (BuyerDetails,Address,ZipCode,PhoneNumber,City)
-VALUES ('Hamid Rahmani','Tehran,Yaft Abad,St Navab,no1',335173456,09195412361,'Tehran'),
-       ('Milad Mohammadluo','Tehran,Shahryar,Andiseh 3',335162569,09126543875,'Sahhryar'),
-	   ('Reza Hamidian','Karaj,Jahan Shahr,Milad 3,no18',32145876,09184568672,'Karaj'),
-	   ('Elnaz Allahvirni','Tehran,Bag Feyz,Sardar Jangal,no125',325146857,09125463253,'Teharn')
+VALUES ('Hamid Rahmani','Tehran,Yaft Abad,St Navab,no1',335173456,0915412361,'Tehran'),
+       ('Milad Mohammadluo','Tehran,Shahryar,Andiseh 3',335162569,0912543875,'Sahhryar'),
+	   ('Reza Hamidian','Karaj,Jahan Shahr,Milad 3,no18',32145876,0918456672,'Karaj'),
+	   ('Elnaz Allahvirni','Tehran,Bag Feyz,Sardar Jangal,no125',325146857,0912463253,'Teharn')
 GO
 
 --Products = محصولات
