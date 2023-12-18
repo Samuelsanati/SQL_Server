@@ -1,6 +1,6 @@
 CREATE DATABASE Stare 
+USE Stare
 GO
-
 --Seller = فروشنده
 --Seller Details = جزئیات فروشنده
 
