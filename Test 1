@@ -19,8 +19,8 @@ GenderAuthors VARCHAR (5),
 AgeAuthors INY,
 EmailAuthors CHAR (50)
 );
-go
-insert into Authors (idAuthors,fNameAuthors,lNameAuthors,genderAuthors,ageAuthors,EmailAuthors)
+GO
+INSERT INTO Authors (idAuthors,fNameAuthors,lNameAuthors,genderAuthors,ageAuthors,EmailAuthors)
             values (1,N'میلاد',N'حاتمی',N'مذکر','46','miladhatami@gmail.com'),
 			       (2,N'باورز',N'باربارا',N'مونث','51','baverzbarbara@gmail.com')
 go
